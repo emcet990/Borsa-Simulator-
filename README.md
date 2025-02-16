@@ -4,6 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Borsa Simulator</title>
+  <!-- Banner Reklamı -->
+  <div id="bannerAd" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #333; color: white; text-align: center; padding: 10px;">
+    <p>Bu oyun, <a href="https://www.example.com" target="_blank" style="color: #FFD700; text-decoration: none;">sponsor</a> tarafından desteklenmektedir!</p>
+  </div>
+
+  <!-- Pop-up Reklamı -->
+  <div id="popupAd" class="modal">
+    <div class="modal-content">
+      <h2>Ödülleri Kazan!</h2>
+      <p>Bu oyunun sponsoruyla ilgili fırsatları keşfetmek için tıklayın.</p>
+      <button id="closePopupAd" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Kapat</button>
+    </div>
+  </div>
+
+  <script>
+    // Pop-up Reklamını Göster
+    function showPopupAd() {
+      document.getElementById("popupAd").style.display = "flex";
+    }
+
+    // Pop-up Reklamını Kapat
+    document.getElementById("closePopupAd").addEventListener("click", function() {
+      document.getElementById("popupAd").style.display = "none";
+    });
+
+    // Pop-up reklamı gösterme, oyun başladığında
+    window.onload = function() {
+      setTimeout(showPopupAd, 5000); // 5 saniye sonra reklam göster
+    };
+  </script>
+  
   <style>
     /* Global Tasarım */
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
